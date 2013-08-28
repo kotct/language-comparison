@@ -56,7 +56,7 @@ number *get_n_primes(number cap)
 
 int main(int argc, char *argv[])
 {
-	number *primes = get_n_primes(2000000);
+	number *primes = get_n_primes(10000);
 
 	printf("%lu\n", primes[0]);
 	
