@@ -1,6 +1,9 @@
 def is_prime(number, primes_to)
 	# loop through all of the previously-generated primes
 	primes_to.each do |prime|
+		if prime >= Math.sqrt(number).to_i
+			return true
+		end
 		# if the number is divisible by any of the previously-
 		# generated primes, it's not prime, so stop
 		if number % prime == 0
@@ -34,4 +37,4 @@ def get_n_primes(cap)
 	return primes
 end
 
-primes = get_n_primes(2000000)
+primes = get_n_primes(10000)
