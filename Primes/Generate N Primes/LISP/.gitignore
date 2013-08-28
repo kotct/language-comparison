@@ -1,0 +1,7 @@
+# compiled files
+# ccl
+*.lx64fsl
+# cmucl
+*.sse2f
+# sbcl
+*.fasl
