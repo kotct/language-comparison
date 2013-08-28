@@ -37,4 +37,4 @@ def get_n_primes(cap)
 	return primes
 end
 
-primes = get_n_primes(2000000)
+primes = get_n_primes(10000)

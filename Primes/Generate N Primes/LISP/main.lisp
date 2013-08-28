@@ -2,11 +2,12 @@
   (= (floor number x) (/ number x)))
 
 (defun prime? (number primes-to)
-  (dolist (prime primes-to)
-    (if (> prime (sqrt number))
-        (return-from prime? t))
-    (if (divisible-by number prime)
-        (return-from prime? nil)))
+  (let ((num-sqrt (sqrt number)))
+	(dolist (prime primes-to)
+	  (if (> prime num-sqrt)
+		  (return-from prime? t))
+	  (if (divisible-by number prime)
+		  (return-from prime? nil))))
   t)
 
 (defun get-n-primes (cap)
@@ -16,6 +17,6 @@
           do (when (prime? count primes)
                (setf primes (append primes (list count))))
           do (incf count))
-    primes))
+    nil))
 
-(time (get-n-primes (2000000))
+(time (get-n-primes 10000))

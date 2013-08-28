@@ -16,6 +16,10 @@ bool is_prime(number test, vector<number> previous_primes)
 	bool ret = true;
 
 	for(number c = 0; c < previous_primes.size(); c += 1) {
+		if(previous_primes[c] >= sqrt_of_test) {
+			ret = true;
+			break;
+		}
 		if(test % previous_primes[c] == 0) {
 			ret = false;
 			break;
@@ -33,7 +37,7 @@ vector<number> get_n_primes(number cap)
 
 	while(ret.size() < cap) {
 		if(is_prime(test, ret)) {
-			printf("Pushing %lu\n", test);
+			// printf("Pushing %lu\n", test);
 			ret.push_back(test);
 		}
 		test += 1;
@@ -44,7 +48,7 @@ vector<number> get_n_primes(number cap)
 
 int main(int argc, char *argv[])
 {
-	vector<number> primes = get_n_primes(2000000);
+	vector<number> primes = get_n_primes(10000);
 
 	printf("%lu\n", primes[0]);
 
